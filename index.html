@@ -1,1 +1,77 @@
-We are controlling transmission
+<html>
+<head>
+	<style type="text/css">
+		@font-face {
+			font-family: Outage;
+			src: url("Outage Cut.ttf");
+		}
+		body {
+			padding:0;
+			margin:0;
+			background: #000;
+			font-family: Outage;
+			color:#fff;
+		}
+		a {
+			color:#fff;
+			text-decoration: none;
+		}
+		#intro {
+			width:80%;
+			height:50%;
+			margin: 20% 10%;
+		}
+		#title {
+			position: absolute;
+			top: 40%;
+			margin: 10% 10%;
+		}
+		#nav {
+			position: absolute;
+			top: 50px;
+			margin: 10% 10%;
+			display: none;
+		}
+	</style>
+	<script src="http:////ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	<script src="lib/realistic-typewriter.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+		    realisticTypewriter = new RealisticTypewriter();
+	        intro1 = document.getElementById("intro1");
+	        intro2 = document.getElementById("intro2");
+	        intro3 = document.getElementById("intro3");
+
+		    // OK, I know the code could look better, but this is just a quick example
+		    setTimeout(function () {
+		        realisticTypewriter.type("There is nothing wrong with your computer.", intro1, function () {
+		            setTimeout(function () {
+		                realisticTypewriter.type("Do not attempt to adjust the picture.", intro2, function(){
+		                	realisticTypewriter.accuracy = 100;
+			                realisticTypewriter.type("We are controlling transmission.", title, function () {
+			                    setTimeout(function(){
+			                    	$('#intro1').fadeOut(1500);
+			                    	$('#intro2').fadeOut(1500);
+			                    	setTimeout(function(){
+			                    		$('#title').animate({top: 0}, 1000, function(){
+			                    			$('#nav').fadeIn(500);
+			                    		});
+			                    	}, 2000);
+			                    }, 1000);
+			                });
+			            });
+		            }, 1000);
+		        });
+		    }, 200);
+		});
+	</script>
+</head>
+<body>
+	<div id="intro">
+		<h1 id="intro1"></h1>
+		<h1 id="intro2"></h1>
+	</div>
+	<h1 id="title"></h1>
+	<h3 id="nav"><a href="mailto:mustardhamsters@gmail.com">contact</a> <a href="http://twitter.com/deanputney">dean</a> <a href="http://twitter.com/stevedekorte">steve</a></h3>
+</body>
+</html>
